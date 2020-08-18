@@ -162,6 +162,7 @@ header div.logo figure {
   border-radius: 35px;
   line-height: 45px;
   text-decoration: none;
+  margin-top: 50px;
 }
 #containerformregister .btn-login {
   width: 100%;
@@ -171,6 +172,10 @@ header div.logo figure {
   border-radius: 35px;
   line-height: 45px;
   text-decoration: none;
+}
+.testcaptcha {
+  margin-bottom: 25px;
+  width: 100%;
 }
 @media screen and (min-width: 768px) {
   #containerformregister #formregister {

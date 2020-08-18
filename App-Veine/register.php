@@ -1,7 +1,7 @@
 <?php
 
-    require_once 'assets/php/controller/RegisterRegex.php';
-    
+require_once 'assets/php/controller/RegisterRegex.php';
+
 
 ?>
 
@@ -46,7 +46,7 @@
                     <input type="phone" placeholder="numéro telephone" id="PhoneNumber" name="PhoneNumber" value="<?= isset($_POST['PhoneNumber']) ? htmlspecialchars($_POST['PhoneNumber']) : '' ?>">
                 </div>
                 <div class="container-error-input">
-                    <span></span>
+                    <span><?= isset($error['PhoneNumber']) ? $error['PhoneNumber'] : '' ?></span>
                 </div>
             </div>
             <div>
@@ -74,16 +74,22 @@
                     <span><?= isset($error['VerifPassword']) ? $error['VerifPassword'] : '' ?></span>
                 </div>
             </div>
+            
+            <div class="g-recaptcha testcaptcha" data-sitekey="6LfCfMAZAAAAAJJ_sr8K8LJJWybh2YJG3feJV9Ip"></div>
+            
             <div>
                 <button type="submit" id="Register-submit" name="Register-submit">S'inscrire</button>
                 <a href="index.php" class="btn-login">se connecter</a>
             </div>
+
     </div>
+
 
 
     </form>
     </div>
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 
