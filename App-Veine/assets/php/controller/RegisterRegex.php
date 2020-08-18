@@ -7,6 +7,8 @@ $BirthDateRegex = "/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/";
 $PasswordRegex = "/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/";
 $PhoneNumberRegex = "/(0)+[0-9]{1}( ){0,1}+[0-9]{2}( ){0,1}+[0-9]{2}( ){0,1}+[0-9]{2}( ){0,1}+[0-9]{2}/";
 
+$registerSuccess = false;
+
 $error = [];
 
 if (isset($_POST['Pseudo'])) {
@@ -16,11 +18,11 @@ if (isset($_POST['Pseudo'])) {
     };
     if ($Users->VerifyPseudoExist($_POST['Pseudo'])) {
         $error['Pseudo'] = 'Le pseudo " ' . $_POST['Pseudo'] . ' " existe déja';
-    }
+    };
     if (empty($_POST['Pseudo'])) {
         $error['Pseudo'] = 'Veuillez Renseigner le champ';
     };
-}
+};
 
 if (isset($_POST['Mail'])) {
     $Users = new Users();
@@ -29,11 +31,11 @@ if (isset($_POST['Mail'])) {
     };
     if ($Users->VerifyMailExist($_POST['Mail'])) {
         $error['Mail'] = 'Le mail " ' . $_POST['Mail'] . ' " existe déja';
-    }
+    };
     if (empty($_POST['Mail'])) {
         $error['Mail'] = 'Veuillez Renseigner le champ';
     };
-}
+};
 
 if (isset($_POST['PhoneNumber'])) {
 
@@ -43,7 +45,7 @@ if (isset($_POST['PhoneNumber'])) {
     if (empty($_POST['PhoneNumber'])) {
         $error['PhoneNumber'] = 'Veuillez Renseigner le champ';
     };
-}
+};
 
 if (isset($_POST['BirthDate'])) {
 
@@ -53,7 +55,7 @@ if (isset($_POST['BirthDate'])) {
     if (empty($_POST['BirthDate'])) {
         $error['BirthDate'] = 'Veuillez Renseigner le champ';
     };
-}
+};
 
 if (isset($_POST['Password']) && isset($_POST['VerifPassword'])) {
 
@@ -71,17 +73,33 @@ if (isset($_POST['Password']) && isset($_POST['VerifPassword'])) {
     };
 };
 
-
 if (isset($_POST['g-recaptcha-response'])) {
+    // clé captcha !!!
     $key = "6LfCfMAZAAAAADG6bZI3JC0FGElLUaR7Tb8RatyD";
     $captchaResponse = $_POST['g-recaptcha-response'];
     $remoteip = $_SERVER['REMOTE_ADDR'];
     $api_url = "https://www.google.com/recaptcha/api/siteverify?secret=" . $key . "&response=" . $captchaResponse . "&remoteip=" . $remoteip;
     $decode = json_decode(file_get_contents($api_url), true);
-}
-if (isset($_POST['Register-submit'])) {
+};
+
+if (isset($_POST['Register-submit']) && count($error) == 0) {
+
     if ($decode['success'] == true) {
+
+        $Users = new Users();
+
+        $mail = htmlspecialchars($_POST['Mail']);
+        $pseudo = htmlspecialchars($_POST['Pseudo']);
+        $phone = htmlspecialchars($_POST['PhoneNumber']);
+        $password = password_hash($_POST['Password'], PASSWORD_BCRYPT);
+        $birthdate = htmlspecialchars($_POST['BirthDate']);
+
+
+        $Users->AddUsers($mail, $pseudo, $phone, $password, $birthdate);
+        
+        $registerSuccess = true;
+
     } else {
         $messageError = 'Erreur : Veuillez cochez le captcha pour vous inscrire';
-    }
-}
+    };
+};
