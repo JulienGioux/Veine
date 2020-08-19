@@ -26,11 +26,11 @@ require_once 'assets/php/controller/RegisterRegex.php';
 
         <?php
         if ($registerSuccess) { ?>
-           
-            <h1>Bravo vous êtes inscris</h1>
-           
-                <a href="index.php">Se connecter</a> 
-            
+            <div>
+                <h1>Bravo vous êtes inscris</h1>
+
+                <a href="index.php">Se connecter</a>
+            </div>
         <?php } else { ?>
             <form id="formregister" action="" method="post">
                 <div>
@@ -90,6 +90,7 @@ require_once 'assets/php/controller/RegisterRegex.php';
                     <button type="submit" id="Register-submit" name="Register-submit">S'inscrire</button>
                     <a href="index.php" class="btn-login">se connecter</a>
                 </div>
+
 
     </div>
     </form>

@@ -74,8 +74,70 @@ class Users
             $resultQuery->bindValue(':users_password', $password);
             $resultQuery->bindValue(':users_birthdate', $birthdate);
             $resultQuery->execute();
+            
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }
     }
+
+
+    public function VerifyLogin($mail, $password)
+    {
+    
+        $query = 'SELECT `users_mail`, `users_password` FROM lhp4_users WHERE `users_mail` = :users_mail ';
+
+        try {
+         
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':users_mail', $mail);
+            $resultQuery->execute();
+            
+            $resultUser = $resultQuery->fetch();
+            
+            if ($resultUser) {
+                
+             return password_verify($password, $resultUser['users_password']);
+               
+            } else {
+               
+               return false;
+
+            }
+
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    
+    }
+
+    public function GetUserInfos($mail)
+    {
+    
+        $query = 'SELECT * FROM lhp4_users WHERE `users_mail` = :users_mail '; 
+
+        try {
+         
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':users_mail', $mail);
+            $resultQuery->execute();
+            
+            $resultUser = $resultQuery->fetch();
+            
+            if ($resultUser) {
+                
+             return $resultUser;
+               
+            } else {
+               
+               return false;
+
+            }
+
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+
+    }
+
+    
 }

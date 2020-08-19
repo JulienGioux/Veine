@@ -69,7 +69,7 @@ if (isset($_POST['Password']) && isset($_POST['VerifPassword'])) {
         $error['VerifPassword'] = 'Veuillez Renseigner le champ';
     };
     if ($_POST['VerifPassword'] != $_POST['Password']) {
-        $error['VerfifPassword'] = 'Les mots de passe ne sont pas identiques';
+        $error['VerifPassword'] = 'Les mots de passe ne sont pas identiques';
     };
 };
 

@@ -42,7 +42,8 @@ require_once 'assets/php/controller/LoginRegex.php';
                 </div>
             </div>
             <div>
-                <button type="submit" id="Register-submit" name="Register-submit">Se Connecter</button>
+            <span><?= (isset($error['login'])) ? $error['login'] : '' ?></span>
+                <button type="submit" id="Login-submit" name="Login-submit">Se Connecter</button>
                 <a href="register.php" class="btn-register">s'inscrire</a>
 
             </div>

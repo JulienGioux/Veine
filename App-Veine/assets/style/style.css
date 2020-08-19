@@ -68,7 +68,6 @@ html {
   transition: all 0.5s;
   position: relative;
   border: none;
-  background-color: #457EFF;
 }
 header {
   width: 100%;
@@ -92,7 +91,7 @@ header div.logo figure {
   padding: 25px 0px;
   width: 100%;
   margin: 0 auto;
-  min-height: 80%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,6 +153,24 @@ header div.logo figure {
   background-color: white;
   color: #f04747;
 }
+#containerformregister #Login-submit {
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 35px;
+  height: 50px;
+  background-color: #f04747;
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+#containerformregister #Login-submit:hover {
+  background-color: white;
+  color: #f04747;
+}
 #containerformregister .btn-register {
   width: 100%;
   margin: 0 auto;
@@ -177,6 +194,43 @@ header div.logo figure {
   margin-bottom: 25px;
   width: 100%;
 }
+.container-navbar {
+  width: 100%;
+  background-color: #457EFF;
+  position: absolute;
+  bottom: 0;
+}
+.container-navbar nav {
+  width: 60%;
+  margin: 0 auto;
+  margin: 20px 0px;
+}
+.container-navbar nav ul {
+  display: flex;
+  flex-direction: row;
+}
+.container-navbar nav ul li {
+  list-style: none;
+  line-height: 50px;
+  margin: 0px 20px;
+}
+.container-navbar nav ul li a {
+  display: block;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #6e98f8;
+  border-radius: 100%;
+  text-decoration: none;
+}
+.container-navbar nav ul li a i {
+  color: white;
+  font-size: 25px;
+}
 @media screen and (min-width: 768px) {
   #containerformregister #formregister {
     width: 60%;
@@ -185,5 +239,23 @@ header div.logo figure {
 @media screen and (min-width: 1440px) {
   #containerformregister #formregister {
     width: 30%;
+  }
+}
+@media screen and (min-width: 425px) {
+  .container-navbar nav {
+    width: 100%;
+  }
+  .container-navbar nav ul li {
+    width: 100%;
+    margin: 0px 15px;
+  }
+}
+@media screen and (min-width: 375px) {
+  .container-navbar nav {
+    width: 100%;
+  }
+  .container-navbar nav ul li {
+    width: 100%;
+    margin: 0px 5px;
   }
 }
