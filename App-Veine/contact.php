@@ -21,6 +21,10 @@ require_once 'assets/php/controller/ContactController.php';
     
     <div class="containerglobal-contact">
 
+        <div class="logo">
+            <figure></figure>
+        </div>
+     
         <form action="" method="get">
 
             <div id="container-contactPending">
@@ -65,6 +69,7 @@ require_once 'assets/php/controller/ContactController.php';
         </form>
 
     </div>
+   
 
     <script src="https://kit.fontawesome.com/2edc250389.js" crossorigin="anonymous"></script>
 </body>

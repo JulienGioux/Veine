@@ -22,11 +22,11 @@ if (!isset($_SESSION['User'])) {
 <body>
 
     <?php include 'assets/php/include/include_navbar.php' ?>
-
-    <div class="title">
-        <h2>Home</h2>
-    </div>
-
+     
+        <div class="title">
+            <h2>Home</h2>
+        </div>
+    
 
     <script src="https://kit.fontawesome.com/2edc250389.js" crossorigin="anonymous"></script>
 </body>
