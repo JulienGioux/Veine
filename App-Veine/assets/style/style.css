@@ -69,6 +69,74 @@ html {
   position: relative;
   border: none;
 }
+.containerglobal-contact {
+  background-color: #2d60d6;
+  min-height: 100%;
+  padding: 50px 20px;
+}
+.containerglobal-contact div.title {
+  background-color: #5a89f7;
+  padding: 10px 0px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: -2px 5px 6px 0px rgba(0, 0, 0, 0.75);
+}
+.containerglobal-contact div.title h3 {
+  display: inline-block;
+  color: white;
+}
+.containerglobal-contact div#container-contactPending {
+  margin-bottom: 50px;
+}
+.containerglobal-contact div#container-contactPending .contact-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px 0px;
+  background-color: #457EFF;
+  padding: 10px 0px;
+  border-radius: 5px;
+  box-shadow: -2px 5px 6px 0px rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.containerglobal-contact div#container-contactPending .contact-center button {
+  width: auto;
+  display: block;
+  border: none;
+  background-color: rgba(255, 0, 0, 0);
+}
+.containerglobal-contact div#container-contactPending .contact-center button i {
+  background-color: #2d60d6;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+}
+.containerglobal-contact div#container-contacts {
+  margin-top: 50px;
+}
+.containerglobal-contact div#container-contacts .contact-center {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 15px 0px;
+  background-color: #457EFF;
+  padding: 10px 0px;
+  border-radius: 5px;
+  box-shadow: -2px 5px 6px 0px rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.containerglobal-contact div#container-contacts .contact-center button {
+  width: auto;
+  display: block;
+  border: none;
+  background-color: rgba(255, 0, 0, 0);
+}
+.containerglobal-contact div#container-contacts .contact-center button i {
+  background-color: #2d60d6;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+}
 header {
   width: 100%;
   height: auto;
@@ -197,7 +265,7 @@ header div.logo figure {
 .container-navbar {
   width: 100%;
   background-color: #457EFF;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 .container-navbar nav {

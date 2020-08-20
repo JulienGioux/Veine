@@ -81,34 +81,34 @@ class Users
     }
 
 
-    public function VerifyLogin($mail, $password)
-    {
-    
-        $query = 'SELECT `users_mail`, `users_password` FROM lhp4_users WHERE `users_mail` = :users_mail ';
+        public function VerifyLogin($mail, $password)
+        {
+        
+            $query = 'SELECT `users_mail`, `users_password` FROM lhp4_users WHERE `users_mail` = :users_mail ';
 
-        try {
-         
-            $resultQuery = $this->bdd->prepare($query);
-            $resultQuery->bindValue(':users_mail', $mail);
-            $resultQuery->execute();
+            try {
             
-            $resultUser = $resultQuery->fetch();
-            
-            if ($resultUser) {
+                $resultQuery = $this->bdd->prepare($query);
+                $resultQuery->bindValue(':users_mail', $mail);
+                $resultQuery->execute();
                 
-             return password_verify($password, $resultUser['users_password']);
-               
-            } else {
-               
-               return false;
+                $resultUser = $resultQuery->fetch();
+                
+                if ($resultUser) {
+                    
+                return password_verify($password, $resultUser['users_password']);
+                
+                } else {
+                
+                return false;
 
+                }
+
+            } catch (Exception $e) {
+                die('Erreur : ' . $e->getMessage());
             }
-
-        } catch (Exception $e) {
-            die('Erreur : ' . $e->getMessage());
+        
         }
-    
-    }
 
     public function GetUserInfos($mail)
     {

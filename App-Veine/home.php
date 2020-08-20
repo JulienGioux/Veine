@@ -3,8 +3,7 @@ session_start();
 
 if (!isset($_SESSION['User'])) {
     header('Location: index.php');
-}else {
-    // var_dump($_SESSION['User']);
+} else {
 }
 
 ?>
@@ -16,7 +15,7 @@ if (!isset($_SESSION['User'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HomePage</title>
     <link rel="stylesheet" href="assets/style/style.css">
 </head>
 
@@ -24,8 +23,8 @@ if (!isset($_SESSION['User'])) {
 
     <?php include 'assets/php/include/include_navbar.php' ?>
 
-    <div>
-        <h1 style="text-align: center; padding-top:25px;">HOME</h1>
+    <div class="title">
+        <h2>Home</h2>
     </div>
 
 
