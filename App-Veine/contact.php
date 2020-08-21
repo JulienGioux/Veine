@@ -17,15 +17,15 @@ require_once 'assets/php/controller/ContactController.php';
 <body>
     <?php include 'assets/php/include/include_navbar.php' ?>
 
-    
-    
+
+
     <div class="containerglobal-contact">
 
         <div class="logo">
             <figure></figure>
         </div>
-     
-        <form action="" method="get">
+
+        <form action="" method="post">
 
             <div id="container-contactPending">
                 <div class="title">
@@ -37,7 +37,15 @@ require_once 'assets/php/controller/ContactController.php';
                             continue;
                         } ?>
 
-                        <li class="contact-center"> <h4><?= $contact['contact_pseudo'] ?> </h4><button type="submit" name="accepted" value="<?= $contact['contact_id'] ?>"><i class="fas fa-plus"></i></button> <button type="submit" name="refused" value="<?= $contact['contact_id'] ?>"><i class="fas fa-minus"></i></button></li>
+                        <li class="contact-center">
+                            <div class="pseudo-contact">
+                                <h4><?= $contact['contact_pseudo'] ?> </h4>
+                            </div>
+                            <div class="container-btn">
+                                <button type="submit" name="accepted" value="<?= $contact['contact_id'] ?>"><i class="fas fa-check"></i>
+                                </button> <button type="submit" name="refused" value="<?= $contact['contact_id'] ?>"><i class="fas fa-times"></i></button>
+                            </div>
+                        </li>
 
                     <?php } ?>
                 </ul>
@@ -53,7 +61,12 @@ require_once 'assets/php/controller/ContactController.php';
                             continue;
                         } ?>
 
-                        <li class="contact-center"><h4><?= $contact['contact_pseudo'] ?></h4> <button type="submit" name="delete" value="<?= $contact['contact_id'] ?>"><i class="fas fa-trash-alt"></i></button>
+                        <li class="contact-center">
+                        <div class="pseudo-contact">
+                                <h4><?= $contact['contact_pseudo'] ?> </h4>
+                        </div>
+                        <div class="container-btn">
+                             <button type="submit" name="delete" value="<?= $contact['contact_id'] ?>"><i class="fas fa-trash-alt"></i></button>
                             <?php if ($contact['contacts_bookmark'] == 0) { ?>
                                 <button type="submit" name="bookmarked" value="<?= $contact['contact_id'] ?>"><i class="far fa-star"></i></button>
                             <?php   } else { ?>
@@ -61,6 +74,7 @@ require_once 'assets/php/controller/ContactController.php';
                                 <button type="submit" name="unmarked" value="<?= $contact['contact_id'] ?>"><i class="fas fa-star"></i></button>
 
                             <?php } ?>
+                            </div>
                         </li>
                     <?php } ?>
                 </ul>
@@ -69,7 +83,7 @@ require_once 'assets/php/controller/ContactController.php';
         </form>
 
     </div>
-   
+
 
     <script src="https://kit.fontawesome.com/2edc250389.js" crossorigin="anonymous"></script>
 </body>

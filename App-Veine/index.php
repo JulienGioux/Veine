@@ -16,11 +16,11 @@ require_once 'assets/php/controller/LoginRegex.php';
 
 <body>
 
-    <header>
+ 
         <div class="logo">
             <figure></figure>
         </div>
-    </header>
+ 
     <div id="containerformregister">
 
         <form id="formregister" action="" method="post">

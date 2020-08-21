@@ -18,9 +18,7 @@ require_once 'assets/php/controller/RegisterRegex.php';
 <body>
 
     
-        <div class="logo">
-            <figure></figure>
-        </div>
+        
     
     <div id="containerformregister">
 

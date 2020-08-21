@@ -6,9 +6,27 @@ if (!isset($_SESSION['User'])) {
 require_once 'assets/php/model/model_contact.php';
 
 $contacts = new Contacts();
-$contactsArray = $contacts->getContacts($_SESSION['User']['users_id']); 
 
 
+if (isset($_POST['accepted'])) {
+
+    $contactId = $_POST['accepted'];
+    $contacts->validateContacts($contactId);
+}
+
+if (isset($_POST['bookmarked'])) {
+
+    $contactId = $_POST['bookmarked'];
+    $contacts->bookmarkedContacts($contactId);
+}
+
+if (isset($_POST['unmarked'])) {
+
+    $contactId = $_POST['unmarked'];
+    $contacts->unmarkedContacts($contactId);
+}
+
+$contactsArray = $contacts->getContacts($_SESSION['User']['users_id']);
 
 
 
