@@ -1,6 +1,6 @@
 <?php
 
-require_once 'assets/php/controller/LoginRegex.php';
+require_once 'controller/LoginRegex.php';
 
 ?>
 
@@ -44,7 +44,7 @@ require_once 'assets/php/controller/LoginRegex.php';
             <div>
             <span><?= (isset($error['login'])) ? $error['login'] : '' ?></span>
                 <button type="submit" id="Login-submit" name="Login-submit">Se Connecter</button>
-                <a href="register.php" class="btn-register">s'inscrire</a>
+                <a href="view/register.php" class="btn-register">s'inscrire</a>
 
             </div>
     </div>

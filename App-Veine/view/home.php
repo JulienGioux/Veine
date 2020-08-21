@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['User'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
 } else {
 }
 
@@ -16,12 +16,12 @@ if (!isset($_SESSION['User'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="../assets/style/style.css">
 </head>
 
 <body>
 
-    <?php include 'assets/php/include/include_navbar.php' ?>
+    <?php include '../include/include_navbar.php' ?>
      
         <div class="title">
             <h2>Home</h2>

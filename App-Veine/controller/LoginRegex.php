@@ -1,6 +1,6 @@
 <?php
 
-require_once 'php/model/model_users.php';
+require_once 'model/model_users.php';
 
 $error = [];
 
@@ -16,6 +16,8 @@ if (isset($_POST['Password'])) {
     };
 }
 
+
+
 if (isset($_POST['Login-submit']) && count($error) == 0) {
 
     $loginUser = new Users;
@@ -27,7 +29,7 @@ if (isset($_POST['Login-submit']) && count($error) == 0) {
 
         session_start();
         $_SESSION['User'] = $loginUser->GetUserInfos($mail);
-        header('Location: home.php');
+        header('Location: view/home.php');
 
     } else {
 

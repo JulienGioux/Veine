@@ -1,6 +1,6 @@
 <?php
 
-require_once 'php/controller/RegisterRegex.php';
+require_once '../controller/RegisterRegex.php';
 
 
 ?>
@@ -12,7 +12,7 @@ require_once 'php/controller/RegisterRegex.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="../assets/style/style.css">
 </head>
 
 <body>
@@ -86,7 +86,7 @@ require_once 'php/controller/RegisterRegex.php';
 
                 <div>
                     <button type="submit" id="Register-submit" name="Register-submit">S'inscrire</button>
-                    <a href="index.php" class="btn-login">se connecter</a>
+                    <a href="../index.php" class="btn-login">se connecter</a>
                 </div>
 
 

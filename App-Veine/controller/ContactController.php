@@ -3,7 +3,7 @@ session_start();
 if (!isset($_SESSION['User'])) {
     header('Location: index.php');
 }
-require_once 'php/model/model_contact.php';
+require_once '../model/model_contact.php';
 
 $contacts = new Contacts();
 

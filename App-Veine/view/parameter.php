@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parametre</title>
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="../assets/style/style.css">
 </head>
 <body>
-<?php include 'php/include/include_navbar.php' ?>
+<?php include '../include/include_navbar.php' ?>
 
 
 
