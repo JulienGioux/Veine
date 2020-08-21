@@ -1,6 +1,6 @@
 <?php
 
-require_once 'assets/php/model/model_users.php';
+require_once 'php/model/model_users.php';
 
 $NameRegex = "/[a-zA-Z0-9ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ]{2,12}$/";
 $BirthDateRegex = "/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/";

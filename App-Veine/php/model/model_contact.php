@@ -123,4 +123,50 @@ class Contacts
             die('Erreur : ' . $e->getMessage());
         }
     }
+       /**
+     * Méthode pour supprimer un contact des contacts
+     * @param type integer
+     * 
+     */
+    public function deleteContact($contactId)
+    {
+        $query = 'DELETE FROM lhp4_contacts WHERE contacts_id = :contact_id';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':contact_id', $contactId);
+
+            if ($resultQuery->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
+       /**
+     * Méthode pour supprimer une demande de contact en attentes
+     * @param type integer
+     * 
+     */
+    public function refusedContact($contactId)
+    {
+        $query = 'DELETE FROM lhp4_contacts WHERE contacts_id = :contact_id';
+
+        try {
+
+            $resultQuery = $this->bdd->prepare($query);
+            $resultQuery->bindValue(':contact_id', $contactId);
+
+            if ($resultQuery->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+    }
 }

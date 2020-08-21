@@ -1,6 +1,6 @@
 <?php
 
-require_once 'assets/php/model/model_users.php';
+require_once 'php/model/model_users.php';
 
 $error = [];
 

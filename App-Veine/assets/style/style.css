@@ -323,6 +323,8 @@ div.logo figure {
 }
 .container-navbar nav ul li:nth-of-type(3) {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 .container-navbar nav ul li:nth-of-type(3) a {
   width: 70px;

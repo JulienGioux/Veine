@@ -1,6 +1,6 @@
 <?php
 
-require_once 'assets/php/controller/RegisterRegex.php';
+require_once 'php/controller/RegisterRegex.php';
 
 
 ?>

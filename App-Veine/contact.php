@@ -1,6 +1,6 @@
 <?php
 
-require_once 'assets/php/controller/ContactController.php';
+require_once 'php/controller/ContactController.php';
 
 
 ?>
@@ -15,7 +15,7 @@ require_once 'assets/php/controller/ContactController.php';
 </head>
 
 <body>
-    <?php include 'assets/php/include/include_navbar.php' ?>
+    <?php include 'php/include/include_navbar.php' ?>
 
 
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/style/style.css">
 </head>
 <body>
-<?php include 'assets/php/include/include_navbar.php' ?>
+<?php include 'php/include/include_navbar.php' ?>
 
 
 
