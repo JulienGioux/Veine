@@ -40,5 +40,4 @@ if (isset($_POST['refused'])) {
 $contactsArray = $contacts->getContacts($_SESSION['User']['users_id']);
 
 
-
 ?>

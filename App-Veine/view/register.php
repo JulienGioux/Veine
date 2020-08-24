@@ -27,7 +27,7 @@ require_once '../controller/RegisterRegex.php';
             <div>
                 <h1>Bravo vous êtes inscris</h1>
 
-                <a href="index.php">Se connecter</a>
+                <a href="../index.php">Se connecter</a>
             </div>
         <?php } else { ?>
             <form id="formregister" action="" method="post">
